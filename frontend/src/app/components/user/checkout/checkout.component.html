@@ -80,18 +80,18 @@
                         <th>Product</th>
                         <th>Total</th>
                     </tr>
+                    <tr class="text-center" *ngFor="let item of cartItems">
+                      <td>{{item.product.name}} <strong class="mx-2">x</strong>{{item.quantity}}</td>
+                      <td>${{item.product.price}}</td>
+                    </tr>
+                   
                     <tr class="text-center">
-                        <td>Product name</td>
-                        <td>£10</td>
+                      <td class="text-black font-weight-bold"><strong>Cart Subtotal</strong></td>
+                      <td class="text-black">${{subTotal()}}</td>
                     </tr>
                     <tr class="text-center">
-                        <td>Product name</td>
-                        <td>£10</td>
-                        
-                    </tr>
-                    <tr class="text-center">
-                       <td>Product name</td>
-                        <td>£10</td>
+                      <td class="text-black font-weight-bold"><strong>Order Total</strong></td>
+                      <td class="text-black font-weight-bold"><strong>${{subTotal()}}</strong></td>
                     </tr>
                 </table>
               </div>

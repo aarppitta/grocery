@@ -1,5 +1,6 @@
 import express from 'express';
 import { metricsLogError, parseError } from 'prom-nodejs-client';
+import base64Helper from '../helpers/base64-helper.js'; 
 
 // Service imports
 import mysqlService from '../services/mysql-service.js';
