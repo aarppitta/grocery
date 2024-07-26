@@ -1,0 +1,75 @@
+
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="col-md-2">
+            <app-sidebar></app-sidebar>
+        </div>
+
+        <!-- Content -->
+        <div class="col-md-10">
+          <div class="bg-light flex-fill">
+            <div class="p-2 d-md-none d-flex text-white bg-success">
+                <a href="#" class="text-white" 
+                   data-bs-toggle="offcanvas"
+                   data-bs-target="#bdSidebar">
+                    <i class="fa-solid fa-bars"></i>
+                </a>
+                <span class="ms-3">Grocery Shopping</span>
+            </div>
+        </div>
+
+        <div class="p-4">
+        <nav style="--bs-breadcrumb-divider:'>';font-size:14px">
+          <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                  <i class="fa-solid fa-house"></i>
+              </li>
+              <li class="breadcrumb-item">User Record</li>
+          </ol>
+      </nav>
+
+            <button type="button" class="btn btn-outline-success float-end" routerLink="/userlist_add"> Add User Record</button>
+            
+            <br><br>
+            
+            <table class="table table-responsive">
+                <thead class="table-light">
+                    <tr class="text-center">
+                      <th scope="col">No.</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Products</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Delievered</th>
+                        <th scope="col">Payment Status</th>
+                        <th scope="col">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="text-center" *ngFor="let user of users">
+                        <th scope="row">1</th>
+                        <td>username</td>
+                        <td>Female</td>
+                        <td> useremail</td>
+                        <td>Tomatos*2</td>
+                        <td>33, wembley, London</td>
+                        <td>+44-9874563210</td>
+                        <td>Yes</td>
+                        <td>Done</td>     
+                        <td>
+                            <button type="button" class="btn btn-outline-success" routerLink="/userlist_update"><i class="fa-solid fa-pen-to-square"></i></button>
+                            <button type="button" class="btn btn-outline-danger" ><i class="fa-solid fa-trash"></i></button>
+                        </td>
+                      </tr>
+                      
+                    </tbody>
+                
+              </table>
+            </div>
+        </div>
+    </div>
+</div>

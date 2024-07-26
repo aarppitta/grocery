@@ -1,0 +1,74 @@
+
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="col-md-2">
+            <app-sidebar></app-sidebar>
+        </div>
+
+        <!-- Content -->
+        <div class="col-md-10">
+          
+          <div class="bg-light flex-fill">
+            <div class="p-2 d-md-none d-flex text-white bg-success">
+                <a href="#" class="text-white" 
+                   data-bs-toggle="offcanvas"
+                   data-bs-target="#bdSidebar">
+                    <i class="fa-solid fa-bars"></i>
+                </a>
+                <span class="ms-3">Grocery Shopping</span>
+            </div>
+        </div>
+        <br>
+        <div class="p-4">
+        <nav style="--bs-breadcrumb-divider:'>';font-size:14px">
+          <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                  <i class="fa-solid fa-house"></i>
+              </li>
+              <li class="breadcrumb-item">Product Record</li>
+          </ol>
+      </nav>
+
+            <button type="button" class="btn btn-outline-success float-end" routerLink="/productlist_add"> Add Product Record</button>
+            <br><br>
+            
+            <table id="productTable" class="table table-responsive table-hover">
+                <thead >
+                    <tr >
+                      <th scope="col">No.</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Specifications</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Stock</th>
+                        <th scope="col">isFeatured</th>
+                        <th scope="col">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr  *ngFor="let product of products; index as i">
+                        <td scope="row">{{ i+1 }}</td>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.price }}</td>
+                        <td>{{ product.description }}</td>
+                        <td>{{ product.specifications }}</td>
+                        <td><img [src]="product.image" alt="Product image" style="width: 100px; height: 100px;"></td>
+                        <td>{{ product.stock }}</td>
+                        <td>{{ product.isFeatured }}</td>     
+                        <td>
+                          
+                          <button type="button" class="btn btn-outline-success" routerLink="/productlist_update" (click)="editProduct(product)"><i class="fa-solid fa-pen-to-square"></i></button>
+                          <button type="button" class="btn btn-outline-danger" (click)="deleteProduct(product)"><i class="fa-solid fa-trash"></i></button>
+                      </td>
+                      </tr> 
+                    </tbody>
+                
+              </table>
+            
+                </div>      
+        </div>
+    </div>
+</div>

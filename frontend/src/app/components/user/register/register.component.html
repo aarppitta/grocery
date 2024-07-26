@@ -1,0 +1,42 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <form [formGroup]="form">
+    <br>
+    <p class="text-start"><b>Register</b></p>
+
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingInput" placeholder="Name" formControlName="name" name="name">
+      <label for="floatingInput">Name</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingInput" placeholder="Display Name" formControlName="display_name" name="display_name">
+      <label for="floatingInput">Display Name</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="email" name="email">
+      <label for="floatingInput">Email address</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Password" formControlName="password" name="password">
+      <label for="floatingPassword">Password</label>
+    </div><br>
+    
+    <div class="form-floating">
+      <select class="form-select" id="floatingSelect" aria-label="Floating label select example" formControlName="gender" name="gender">
+        <option selected>Select Gender</option>
+        <option value="1">Female</option>
+        <option value="2">Male</option>
+        <option value="3">Other</option>
+      </select>
+      <label for="floatingSelect">Select Gender</label>
+    </div>
+    <br>
+    <div>
+    <button class="btn btn-outline-success" type="submit">Register</button>
+      <a routerLink="/login"><span class="align-baseline">Already have an Account?</span></a> 
+    </div>
+  </form>
+</div>

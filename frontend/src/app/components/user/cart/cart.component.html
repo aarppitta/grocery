@@ -1,0 +1,70 @@
+<app-navbar></app-navbar>
+<br>
+<div class="container">
+    <h3 class="text-center">Cart</h3>
+    <br><br>
+
+
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;  /* This makes the borders collapse into a single line */
+        }
+    
+        th, td {
+            border-bottom: 1px solid #ddd;  /* This adds a border to the bottom of each cell */
+            padding: 15px;
+            text-align: left;
+        }
+    </style>
+    <div class="container">
+        <div class="table-responsive-xl">
+            <table class="table">
+                <tr>
+                    <th>Image</th>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Remove</th>
+                </tr>
+                <tr *ngFor="let item of cartItems">
+                    <td><img [src]="item.product.image" alt="Image" class="img-fluid"></td>
+                    <td>{{item.product.pname}}</td>
+                    <td>${{item.product.price}}</td>
+                    <td>
+                        <div class="input-group mb-3 d-flex align-items-center quantity-container" style="max-width: 120px;">
+                            <div class="input-group-prepend">
+                              <button (click)="updateCartItem(item._id,item.quantity-1)" class="btn btn-outline-black decrease" type="button">&minus;</button>
+                            </div>
+                            <input type="text" class="form-control text-center quantity-amount" value={{item.quantity}} placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                            <div class="input-group-append">
+                              <button (click)="updateCartItem(item._id,item.quantity+1)" class="btn btn-outline-black increase" type="button">&plus;</button>
+                            </div>
+                          </div>
+                    </td>
+                    <td>{{item.product.price* item.quantity}}</td>
+                    <td><a  (click)="deleteCartItem(item._id)" class="btn btn-black btn-sm">X</a></td>
+                </tr>
+               
+            </table>
+          </div>
+        <br>
+          <button type="button" class="btn btn-outline-success">Continue Shopping</button>   
+<br><br>
+          
+          <div class="bottom-40 end-50">
+            <h3 class="text-center">Cart Total</h3>
+            <p class="text-center">Sub Total : $ {{subTotal()}}</p>
+            <p class="text-center"><b>Total : $ {{subTotal()}}</b></p>
+            
+            <div class="d-grid gap-2 col-4 mx-auto">
+                <button class="btn btn-outline-success" type="button" routerLink="/checkout">Checkout</button>
+                
+              </div> 
+          </div>
+      </div>
+</div>
+<br>
+
+<app-footer></app-footer>

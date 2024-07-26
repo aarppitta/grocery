@@ -1,0 +1,102 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="col-md-3">
+            <app-sidebar></app-sidebar>
+        </div>
+
+        <!-- Content -->
+        <div class="col-md-9">
+
+          <div class="bg-light flex-fill">
+            <div class="p-2 d-md-none d-flex text-white bg-success">
+                <a href="#" class="text-white" 
+                   data-bs-toggle="offcanvas"
+                   data-bs-target="#bdSidebar">
+                    <i class="fa-solid fa-bars"></i>
+                </a>
+                <span class="ms-3">Grocery Shopping</span>
+            </div>
+        </div>
+        <br>
+        <div class="p-4">
+        <nav style="--bs-breadcrumb-divider:'>';font-size:14px">
+          <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                  <i class="fa-solid fa-house"></i>
+              </li>
+              <li class="breadcrumb-item">Add User Record</li>
+          </ol>
+      </nav>
+           
+        
+         <br>
+            <div class="col-md-7">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Name">
+                    <label for="floatingInput">Name</label>
+                  </div>
+
+                  <div class="form-floating">
+                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                      <option selected>Select Gender</option>
+                      <option value="1">Female</option>
+                      <option value="2">Male</option>
+                      <option value="3">Other</option>
+                    </select>
+                    <label for="floatingSelect">select</label>
+                  </div>
+                  <br>
+
+                  <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Email address</label>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Product & Quantity">
+                    <label for="floatingInput">Product & Quantity</label>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Address">
+                    <label for="floatingInput">Address</label>
+                  </div>
+                  
+                  <div class="form-floating mb-3">
+                    <input type="number" class="form-control" id="floatingInput" placeholder="Contact Number">
+                    <label for="floatingInput">Contact Number</label>
+                  </div>
+
+                  <div class="form-floating">
+                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                      <option selected>Select Delievery Status</option>
+                      <option value="1">Yes</option>
+                      <option value="2">No</option>
+                      <option value="3">Other</option>
+                    </select>
+                    <label for="floatingSelect">Select Status</label>
+                  </div>
+                  <br>
+
+                  <div class="form-floating">
+                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                      <option selected>Select Payment Status</option>
+                      <option value="1">Done</option>
+                      <option value="2">Pending</option>
+                      <option value="3">Declined</option>
+                    </select>
+                    <label for="floatingSelect">Select Payment</label>
+                  </div>
+
+                  <br>
+
+                  <button type="button" class="btn btn-outline-success">Add User</button>
+            </div>
+          </div>
+            <br>
+            
+        </div>
+    </div>
+</div>

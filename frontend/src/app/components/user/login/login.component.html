@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <form [formGroup]="form" (submit)="login()">
+    <br>
+    <p class="text-start"><b>Login</b></p>
+    <div class="form-floating mb-3">
+      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="email" name="email">
+      <label for="floatingInput">Email address</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Password" formControlName="password" name="password">
+      <label for="floatingPassword">Password</label>
+    </div>
+
+    <br>
+    <div>
+    <button class="btn btn-outline-success" type="submit">Login</button>
+    
+      <a routerLink="/register"><span class="align-baseline">Create an Account?</span></a> 
+    </div>
+  </form>
+</div>

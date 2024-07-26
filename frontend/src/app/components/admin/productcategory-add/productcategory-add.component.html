@@ -1,0 +1,58 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="col-md-3">
+            <app-sidebar></app-sidebar>
+        </div>
+
+        <!-- Content -->
+        <div class="col-md-9">
+            <div class="bg-light flex-fill">
+                <div class="p-2 d-md-none d-flex text-white bg-success">
+                    <a href="#" class="text-white" 
+                       data-bs-toggle="offcanvas"
+                       data-bs-target="#bdSidebar">
+                        <i class="fa-solid fa-bars"></i>
+                    </a>
+                    <span class="ms-3">Grocery Shopping</span>
+                </div>
+            </div>
+    
+            <div class="p-4">
+            <nav style="--bs-breadcrumb-divider:'>';font-size:14px">
+              <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                      <i class="fa-solid fa-house"></i>
+                  </li>
+                  <li class="breadcrumb-item">Add Category</li>
+              </ol>
+          </nav>
+
+         <br>
+         <form [formGroup]="form" (submit)="add_category()">
+            <div class="col-md-7">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Category Name" formControlName="name" name="name">
+                    <label for="floatingInput">Category Name</label>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="formFileMultiple" class="form-label">Upload Image</label>
+                    <input class="form-control" type="file" id="formFileMultiple" formControlName="image" name="image" multiple>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Description" formControlName="description" name="description">
+                    <label for="floatingInput">Description</label>
+                  </div> <br>
+
+                  <button type="submit" class="btn btn-outline-success">Add Category</button>
+            </div>
+        </form>
+            </div>
+            <br>
+            
+        </div>
+    </div>
+</div>

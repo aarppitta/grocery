@@ -1,0 +1,4 @@
+#productTable td, #productTable th {
+    padding: 8px; /* Reduce padding */
+    text-align: center; /* Center text */
+  }
