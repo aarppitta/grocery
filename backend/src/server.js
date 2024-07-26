@@ -18,8 +18,9 @@ app.use(express.json());
 
 const SERVICE_BASE_URL = "/v1";
 
-app.get('', (req, res) => {
-  res.send('Hello! This is grocery project');
+app.use((req, res, next) => {
+  console.log(`Request URL: ${req.url}`);
+  next();
 });
 
 /**
