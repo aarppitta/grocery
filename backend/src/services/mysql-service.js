@@ -20,6 +20,24 @@ const dialect = new MysqlDialect({
 // Dialect is passed to Kysely's constructor, and from now on, Kysely knows how
 // to communicate with your database.
 
+// Connect to the database
+connection.connect((err) => {
+  if (err) {
+    console.error('Error connecting to the database:', err);
+    return;
+  }
+  console.log('Connected to the MySQL database.');
+});
+
+// Example query
+connection.query('SELECT 1 + 1 AS solution', (err, results) => {
+  if (err) throw err;
+  console.log('The solution is: ', results[0].solution);
+});
+
+// Close the connection
+connection.end();
+
 const mysqlService = new Kysely({
   dialect,
 });
